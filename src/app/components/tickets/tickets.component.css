@@ -1,0 +1,250 @@
+/* General Layout */
+.ticket-container {
+  width: 80%;
+  margin: 20px auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #004d99;
+}
+
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+.popup-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.popup-content input {
+  padding: 10px;
+  width: 80%;
+  font-size: 1rem;
+  border: 2px solid #004d99;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.popup-content button {
+  background-color: #004d99;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #003366;
+}
+
+/* Seat Map */
+.seat-map {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.seat-map.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #004d99;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  
+}
+
+.seat.available {
+  background-color: #f1f1f1;
+}
+
+.seat.selected {
+  background-color: #28a745;
+  transform: scale(1.1);
+}
+
+.seat.sold {
+  background-color: #dc3545;
+  cursor: not-allowed;
+}
+
+.seat.bestseller {
+  background-color: #ffc107;
+}
+
+.seat:hover {
+  transform: scale(1.1);
+}
+
+/* Footer Styling for Centering */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+button:disabled {
+  background-color: #dcdcdc;
+  cursor: not-allowed;
+}
+
+button {
+  background-color: #004d99;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #003366;
+}
+
+/* Custom Confirmation Popup */
+.confirm-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+.confirm-popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+.confirm-popup-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.confirm-popup-content pre {
+  text-align: left;
+  font-size: 0.9rem;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm-buttons button {
+  background-color: #004d99;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.confirm-buttons button:hover {
+  background-color: #003366;
+}
+
+.confirm-buttons button:nth-child(2) {
+  background-color: #dc3545;
+}
+
+.confirm-buttons button:nth-child(2):hover {
+  background-color: #c82333;
+}
+
+.seat-map.hidden{
+  display: none;
+}
+
+/* Movie Screen Container */
+.movie-screen-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.movie-screen {
+  width: 100%;
+  max-width: 600px;
+  height: 50px;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.screen-label {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}

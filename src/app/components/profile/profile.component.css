@@ -1,0 +1,149 @@
+/* Add background color to the profile card */
+.card.user-card-full {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* Style the user profile section */
+.user-profile {
+  background: #A8C0FF 100%;
+  border-radius: 10px 0 0 10px;
+  color: white;
+  padding: 30px 0;
+}
+
+.user-profile .img-radius {
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 20px;
+}
+
+.user-profile h6 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.user-profile p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.user-profile .btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Center align the logout button */
+.user-profile .logout-btn {
+  display: block;
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Logout button hover effect */
+.user-profile .logout-btn:hover {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+
+.logout-btn:hover {
+  text-decoration: underline;
+}
+
+/* Styling the Edit and Information section */
+.card-block {
+  padding: 30px;
+}
+
+.card-block h6 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 10px;
+}
+
+.card-block .row .col-sm-6 {
+  margin-bottom: 15px;
+}
+
+.card-block .row label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.card-block .form-control {
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+}
+
+.card-block .form-control:focus {
+  border-color: #4caf50;
+}
+
+.card-block .btn-primary {
+  width: 100%;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.card-block .btn-warning {
+  width: 100%;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.card-block .btn-success {
+  width: 100%;
+  padding: 10px;
+  font-weight: 500;
+}
+
+/* Styling for Password Change Form */
+.card-block .btn-warning {
+  margin-bottom: 20px;
+}
+
+.card-block .form-control {
+  margin-bottom: 10px;
+}
+
+/* Adjusting layout for mobile view */
+@media (max-width: 768px) {
+  .user-profile {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .user-profile h6 {
+    font-size: 20px;
+  }
+
+  .card-block {
+    padding: 20px;
+  }
+
+  .card-block .row .col-sm-6 {
+    margin-bottom: 10px;
+  }
+}

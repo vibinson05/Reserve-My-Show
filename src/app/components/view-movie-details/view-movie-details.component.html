@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let movie of movieListarray">
+          <div class="card" style="width: 100%;">
+              <img class="card-img-top" [src]="movie.imageUrl" alt="Card image cap">
+              <div class="card-body">
+                  <h4 class="card-title">{{movie.movieName}}</h4>
+                  <p class="card-text"><strong>Director:</strong> {{movie.director}}</p>
+                  <p><strong>Actor:</strong> {{movie.actor}}</p>
+                  <p><strong>Genre:</strong> {{movie.genre}}</p>
+                    <p><strong>Release Year:</strong> {{movie.releaseYear}}</p>
+                    <p><strong>Description:</strong> {{movie.description}}</p>
+                  <div class="container">
+                      <b>Show timing</b>
+                      <div class="row">
+                          <div class="col-sm">
+                              <button class="btn btn-danger" (click)="buyTicket('6.00Am',movie.movieName)">6.00AM</button>
+                          </div>
+                          <div class="col-sm">
+                              <button class="btn btn-danger" (click)="buyTicket('9.00Am',movie.movieName)">9.00AM</button>
+                          </div>
+                          <div class="col-sm">
+                              <button class="btn btn-danger" (click)="buyTicket('12.00Pm',movie.movieName)">12.00PM</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+

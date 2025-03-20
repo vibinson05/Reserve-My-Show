@@ -1,0 +1,164 @@
+.home-container {
+    font-family: Arial, sans-serif;
+    color: white;
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  
+  .background {
+    background: url('../../../assets/BG.jpg') no-repeat center center/cover;
+    height: 130%;
+    
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.6); 
+    height: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column;
+    text-align: left;
+  
+  }
+  
+  .banner-content{
+    margin-right: 50%;
+  }
+  
+  .banner-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .banner-content p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    max-width: 600px;
+  }
+  
+  .actions {
+    margin-bottom: 150px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .trailer-btn {
+    background-color: #ff4500;
+    color: white;
+  }
+  
+  .watch-btn {
+    background-color: #1e90ff;
+    color: white;
+  }
+  
+  
+  .movie-slider {
+    background: transparent;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .movie-slider h2 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    flex-grow: 1;
+  }
+  
+  .carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    flex-grow: 1; 
+  }
+  
+  
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel {
+    scrollbar-width: none; 
+  }
+  
+  .movie-card {
+    min-width: 150px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  
+  .movie-card img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  .left-arrow {
+    left: 10px;
+  }
+  
+  .right-arrow {
+    right: 10px;
+  }
+  
+  .arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  

@@ -1,0 +1,53 @@
+<header class="header">
+    <div class="container">
+      <!-- Logo Section -->
+      <a class="logo" href="/">
+        <img src="../../../assets/logo.png" alt="Logo" height="40px" />
+      </a>
+     <!-- Search Bar Section -->
+     <div class="navbar-search">
+      <input type="text" class="search-input" [(ngModel)]="searchTerm" (input)="searchMovies()" placeholder="Search movies..." />
+      <button class="search-btn" type="submit" aria-label="Search">
+        <span class="material-icons">search</span>
+      </button>
+
+      <!-- Dropdown Results -->
+      <div class="search-results" *ngIf="filteredMovies.length > 0">
+        <ul>
+          <li *ngFor="let movie of filteredMovies" (click)="goToMovie(movie.id)">
+            <img [src]="movie.imageUrl" alt="{{ movie.movieName }}" class="movie-thumbnail" />
+            {{ movie.movieName }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+      <!-- Hamburger Menu (Toggle for Mobile) -->
+      <div class="burger-menu" (click)="toggleMenu()" aria-label="Toggle Navigation">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+  
+      <!-- Navigation Links (Hidden in Mobile View) -->
+      <nav [class.active]="isMenuOpen" class="nav-links">
+        <ul>
+          <li><a routerLink="/home" routerLinkActive="active"><span>Home</span></a></li>
+          
+          <!-- Show Login if Not Logged In -->
+          <li *ngIf="!isLoggedIn">
+            <a routerLink="/login" routerLinkActive="active"><span>Login</span></a>
+          </li>
+  
+          <!-- Show Profile & Logout if Logged In -->
+          <li *ngIf="isLoggedIn">
+            <a routerLink="/profile" routerLinkActive="active"><span>Profile</span></a>
+          </li>
+          <li *ngIf="isLoggedIn">
+            <a (click)="logout()" style="cursor: pointer;"><span>Logout</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  

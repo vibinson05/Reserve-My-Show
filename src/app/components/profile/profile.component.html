@@ -1,0 +1,143 @@
+
+  <div class="padding">
+    <div class="row container d-flex justify-content-center">
+      <div class="col-xl-6 col-md-12">
+        <div class="card user-card-full">
+          <div class="row m-l-0 m-r-0">
+            <div class="col-sm-4 bg-c-lite-green user-profile">
+              <div class="card-block text-center text-white">
+                <div class="m-b-25">
+                  <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
+                </div>
+                <h6 class="f-w-600">{{ user.name }}</h6>
+               
+                <!-- Edit button in the UI -->
+                <button *ngIf="!isEditing" (click)="enableEdit()" class="btn btn-outline-light m-t-10">Edit</button>
+                <button (click)="logout()" class="nav-link text-danger logout-btn">Logout</button>
+                
+               
+                
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <!-- Show Edit Form when isEditing is true -->
+              <div *ngIf="isEditing" class="card-block">
+                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Edit Information</h6>
+                <form (ngSubmit)="updateInfo()">
+
+                  <div class="row">
+                    <div class="col-sm-6 mb-3">
+                      <label for="email">Email</label>
+                      <input id="email" [(ngModel)]="user.email" name="email" class="form-control" type="email">
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                      <label for="phone">Phone</label>
+                      <input id="phone" [(ngModel)]="user.phone" name="phone" class="form-control" type="text">
+                    </div>
+                  </div>
+                  
+                  <!-- Gender and Country in one row -->
+                  <div class="row">
+                    <div class="col-sm-6 mb-3">
+                      <label for="gender">Gender</label>
+                      <select id="gender" [(ngModel)]="user.gender" name="gender" class="form-control">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                   <div class="col-sm-6 mb-3">
+                      <label for="country">Country</label>
+                      <input id="country" [(ngModel)]="user.country" name="country" class="form-control" type="text">
+                    </div>
+                  </div>
+                  
+                  <!-- Additional Info: City, Age -->
+                  <div class="row">
+                    <div class="col-sm-6 mb-3">
+                      <label for="city">City</label>
+                      <input id="city" [(ngModel)]="user.city" name="city" class="form-control" type="text">
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                      <label for="age">Age</label>
+                      <input id="age" [(ngModel)]="user.age" name="age" class="form-control" type="number">
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary m-t-20">Save</button>
+                </form>
+              </div>
+
+              <!-- Show User Information when not in edit mode -->
+              <div *ngIf="!isEditing" class="card-block">
+                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Email</p>
+                    <h6 class="text-muted f-w-400">{{ user.email }}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Phone</p>
+                    <h6 class="text-muted f-w-400">{{ user.phone }}</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Gender</p>
+                    <h6 class="text-muted f-w-400">{{ user.gender }}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Country</p>
+                    <h6 class="text-muted f-w-400">{{ user.country }}</h6>
+                  </div>
+                </div>
+
+                <!-- Additional Info: City, Age -->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">City</p>
+                    <h6 class="text-muted f-w-400">{{ user.city }}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Age</p>
+                    <h6 class="text-muted f-w-400">{{ user.age }}</h6>
+                  </div>
+                </div>
+
+                <!-- Password Change Section -->
+<h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Security</h6>
+<div class="row">
+  <div class="col-sm-12 mb-3">
+    <button (click)="showChangePasswordForm()" class="btn btn-warning">Change Password</button>
+  </div>
+
+  <!-- Password Change Form -->
+  <div *ngIf="isChangingPassword">
+    <div class="row">
+      <div class="col-sm-12 mb-3">
+        <label for="oldPassword">Old Password</label>
+        <input id="oldPassword" [(ngModel)]="oldPassword" name="oldPassword" class="form-control" type="password">
+      </div>
+      <div class="col-sm-12 mb-3">
+        <label for="newPassword">New Password</label>
+        <input id="newPassword" [(ngModel)]="newPassword" name="newPassword" class="form-control" type="password">
+      </div>
+      <div class="col-sm-12 mb-3">
+        <label for="confirmPassword">Confirm New Password</label>
+        <input id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" class="form-control" type="password">
+      </div>
+      <div class="col-sm-12 mb-3">
+        <button (click)="changePassword()" class="btn btn-success">Save New Password</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

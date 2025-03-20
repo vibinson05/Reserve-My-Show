@@ -1,0 +1,34 @@
+<div class="home-container">
+  
+    <div class="background">
+      <div class="overlay">
+        <div class="banner-content">
+          <h1>Amaran (2024)</h1>
+          
+          <p>
+            Amaran is a Tamil action thriller directed by Rajkumar Periyasamy, known for its intense narrative and gripping performances.
+          </p>
+          <div class="actions">
+            <button class="btn trailer-btn" (click)="navigateToTrailer()">Watch Trailer</button>
+            <button class="btn watch-btn" (click)="navigateToBookNow()">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    
+    <div class="movie-slider">
+      <h2>Recommended Movies</h2>
+      <div class="carousel-container">
+        <button class="arrow left-arrow" (click)="scrollLeft()">‹</button>
+        <div class="carousel">
+          <div *ngFor="let movie of movies" class="movie-card">
+            <img (click)="navigateToBookNow()" [src]="movie.image" [alt]="movie.title" />
+            <p>{{ movie.title }}</p>
+          </div>
+        </div>
+        <button class="arrow right-arrow" (click)="scrollRight()">›</button>
+      </div>
+    </div>
+  </div>
+  
